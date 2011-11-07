@@ -2,8 +2,8 @@
 # Conditional build:
 %bcond_without	latex	# LaTeX fonts
 #
-Summary:	Collection of Thai scalable fonts
-Summary(pl.UTF-8):	Kolekcja skalowalnych fontów tajskich
+Summary:	Thai Arundina scalable fonts
+Summary(pl.UTF-8):	Tajskie fonty skalowalne Arundina
 Name:		fonts-thai-arundina
 Version:	0.1.3
 Release:	1
@@ -35,8 +35,8 @@ TLWG pod następującym kątem:
  - zgodność z OpenType.
 
 %package -n fonts-TTF-thai-arundina
-Summary:	Collection of TrueType Thai scalable fonts
-Summary(pl.UTF-8):	Kolekcja skalowalnych fontów tajskich w formacie TrueType
+Summary:	TrueType Thai Arundina fonts
+Summary(pl.UTF-8):	Tajskie fonty Arundina w formacie TrueType
 Group:		Fonts
 Requires(post,postun):	fontpostinst
 
@@ -59,8 +59,8 @@ TLWG pod następującym kątem:
 Ten pakiet zawiera fonty w formacie TrueType.
 
 %package -n fonts-Type1-thai-arundina
-Summary:	Collection of Type1 Thai scalable fonts
-Summary(pl.UTF-8):	Kolekcja skalowalnych fontów tajskich w formacie Type1
+Summary:	Type1 Thai Arundina fonts
+Summary(pl.UTF-8):	Tajskie fonty Arundina w formacie Type1
 Group:		Fonts
 Requires(post,postun):	fontpostinst
 
@@ -83,8 +83,8 @@ TLWG pod następującym kątem:
 Ten pakiet zawiera fonty w formacie Type1.
 
 %package -n thailatex-fonts-arundina
-Summary:	Collection of Thai scalable fonts for LaTeX
-Summary(pl.UTF-8):	Kolekcja skalowalnych fontów tajskich dla LaTeXa
+Summary:	Thai Arundina fonts for LaTeX
+Summary(pl.UTF-8):	Tajskie fonty Arundina dla LaTeXa
 Group:		Fonts
 Requires(post,postun):	texlive
 Requires:	texlive
