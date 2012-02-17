@@ -5,12 +5,12 @@
 Summary:	Thai Arundina scalable fonts
 Summary(pl.UTF-8):	Tajskie fonty skalowalne Arundina
 Name:		fonts-thai-arundina
-Version:	0.1.3
+Version:	0.2.0
 Release:	1
 License:	MIT-like
 Group:		Fonts
-Source0:	http://linux.thai.net/pub/thailinux/software/thaifonts-arundina/thaifonts-arundina-%{version}.tar.gz
-# Source0-md5:	ff64b01e060891277ae8a4f7093c4f60
+Source0:	http://linux.thai.net/pub/thailinux/software/thaifonts-arundina/fonts-sipa-arundina-%{version}.tar.gz
+# Source0-md5:	884935735243358d9efbe23c29f2df44
 URL:		http://linux.thai.net/projects/thaifonts-arundina
 BuildRequires:	fontforge >= 20080110
 BuildRequires:	xorg-app-mkfontscale
@@ -88,7 +88,7 @@ Summary(pl.UTF-8):	Tajskie fonty Arundina dla LaTeXa
 Group:		Fonts
 Requires(post,postun):	texlive
 Requires:	texlive
-Requires:	thailatex >= 0.4.6
+Requires:	thailatex >= 0.4.7
 
 %description -n thailatex-fonts-arundina
 Arundina fonts were created under SIPA's initiation, aiming at
@@ -109,7 +109,7 @@ TLWG pod następującym kątem:
 Ten pakiet zawiera fonty LaTeXowe do używania z pakietem thailatex.
 
 %prep
-%setup -q -n thaifonts-arundina-%{version}
+%setup -q -n fonts-sipa-arundina-%{version}
 
 %build
 %configure \
@@ -167,10 +167,10 @@ umask 022
 %files -n thailatex-fonts-arundina
 %defattr(644,root,root,755)
 %doc AUTHORS COPYING ChangeLog NEWS README
-# shouldn't it be %{_datadir}/texmf/fonts/afm/public/arundina?
-%{_datadir}/texmf/fonts/afm/public/tlwg/arun*.afm
-%{_datadir}/texmf/fonts/map/dvips/arundina
-%{_datadir}/texmf/fonts/tfm/public/arundina
-%{_datadir}/texmf/fonts/type1/public/arundina
-%{_datadir}/texmf/fonts/vf/public/arundina
+%{_datadir}/texmf/fonts/afm/public/fonts-arundina
+%{_datadir}/texmf/fonts/enc/dvips/fonts-arundina
+%{_datadir}/texmf/fonts/map/dvips/fonts-arundina
+%{_datadir}/texmf/fonts/tfm/public/fonts-arundina
+%{_datadir}/texmf/fonts/type1/public/fonts-arundina
+%{_datadir}/texmf/fonts/vf/public/fonts-arundina
 %{_datadir}/texmf/tex/latex/fonts-arundina
