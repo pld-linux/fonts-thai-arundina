@@ -5,15 +5,17 @@
 Summary:	Thai Arundina scalable fonts
 Summary(pl.UTF-8):	Tajskie fonty skalowalne Arundina
 Name:		fonts-thai-arundina
-Version:	0.2.0
-Release:	2
+Version:	0.2.1
+Release:	1
 License:	MIT-like
 Group:		Fonts
-Source0:	http://linux.thai.net/pub/thailinux/software/thaifonts-arundina/fonts-sipa-arundina-%{version}.tar.gz
-# Source0-md5:	884935735243358d9efbe23c29f2df44
+Source0:	http://linux.thai.net/pub/thailinux/software/thaifonts-arundina/fonts-sipa-arundina-%{version}.tar.xz
+# Source0-md5:	e3701365e007c0fb271de6d7778cea99
 URL:		http://linux.thai.net/projects/thaifonts-arundina
 BuildRequires:	fontforge >= 20080110
 BuildRequires:	xorg-app-mkfontscale
+BuildRequires:	tar >= 1:1.22
+BuildRequires:	xz
 %if %{with latex}
 BuildRequires:	texlive
 BuildRequires:	thailatex >= 0.4.6
@@ -126,7 +128,7 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT
 
 install -d $RPM_BUILD_ROOT%{_fontsdir}/Type1/afm
-mv $RPM_BUILD_ROOT%{_fontsdir}/Type1/*.afm $RPM_BUILD_ROOT%{_fontsdir}/Type1/afm
+%{__mv} $RPM_BUILD_ROOT%{_fontsdir}/Type1/*.afm $RPM_BUILD_ROOT%{_fontsdir}/Type1/afm
 mkfontscale -o $RPM_BUILD_ROOT%{_fontsdir}/Type1/fonts.scale.thai-arundina $RPM_BUILD_ROOT%{_fontsdir}/Type1
 
 %clean
@@ -156,6 +158,7 @@ umask 022
 %defattr(644,root,root,755)
 %doc AUTHORS COPYING ChangeLog NEWS README
 %{_fontsdir}/TTF/Arundina*.ttf
+/etc/fonts/conf.avail/65-sipa-arundina.conf
 
 %files -n fonts-Type1-thai-arundina
 %defattr(644,root,root,755)
