@@ -6,7 +6,7 @@ Summary:	Thai Arundina scalable fonts
 Summary(pl.UTF-8):	Tajskie fonty skalowalne Arundina
 Name:		fonts-thai-arundina
 Version:	0.2.1
-Release:	1
+Release:	2
 License:	MIT-like
 Group:		Fonts
 Source0:	http://linux.thai.net/pub/thailinux/software/thaifonts-arundina/fonts-sipa-arundina-%{version}.tar.xz
@@ -125,7 +125,8 @@ Ten pakiet zawiera fonty LaTeXowe do używania z pakietem thailatex.
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+	DESTDIR=$RPM_BUILD_ROOT \
+	fontconfigdir=%{_datadir}/fontconfig/conf.avail
 
 install -d $RPM_BUILD_ROOT%{_fontsdir}/Type1/afm
 %{__mv} $RPM_BUILD_ROOT%{_fontsdir}/Type1/*.afm $RPM_BUILD_ROOT%{_fontsdir}/Type1/afm
@@ -158,7 +159,7 @@ umask 022
 %defattr(644,root,root,755)
 %doc AUTHORS COPYING ChangeLog NEWS README
 %{_fontsdir}/TTF/Arundina*.ttf
-/etc/fonts/conf.avail/65-sipa-arundina.conf
+%{_datadir}/fontconfig/conf.avail/65-sipa-arundina.conf
 
 %files -n fonts-Type1-thai-arundina
 %defattr(644,root,root,755)
