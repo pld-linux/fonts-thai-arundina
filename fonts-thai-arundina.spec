@@ -5,13 +5,13 @@
 Summary:	Thai Arundina scalable fonts
 Summary(pl.UTF-8):	Tajskie fonty skalowalne Arundina
 Name:		fonts-thai-arundina
-Version:	0.2.1
-Release:	2
+Version:	0.2.2
+Release:	1
 License:	MIT-like
 Group:		Fonts
-Source0:	http://linux.thai.net/pub/thailinux/software/thaifonts-arundina/fonts-sipa-arundina-%{version}.tar.xz
-# Source0-md5:	e3701365e007c0fb271de6d7778cea99
-URL:		http://linux.thai.net/projects/thaifonts-arundina
+Source0:	https://linux.thai.net/pub/thailinux/software/thaifonts-arundina/fonts-sipa-arundina-%{version}.tar.xz
+# Source0-md5:	c3c793156cb64e698fb16d280614e31d
+URL:		https://linux.thai.net/projects/thaifonts-arundina
 BuildRequires:	fontforge >= 20080110
 BuildRequires:	xorg-app-mkfontscale
 BuildRequires:	tar >= 1:1.22
