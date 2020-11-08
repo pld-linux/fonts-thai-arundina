@@ -5,18 +5,22 @@
 Summary:	Thai Arundina scalable fonts
 Summary(pl.UTF-8):	Tajskie fonty skalowalne Arundina
 Name:		fonts-thai-arundina
-Version:	0.2.2
+Version:	0.3.2
 Release:	1
 License:	MIT-like
 Group:		Fonts
-Source0:	https://linux.thai.net/pub/thailinux/software/thaifonts-arundina/fonts-sipa-arundina-%{version}.tar.xz
-# Source0-md5:	c3c793156cb64e698fb16d280614e31d
+Source0:	https://linux.thai.net/pub/thailinux/software/thaifonts-arundina/fonts-arundina-%{version}.tar.xz
+# Source0-md5:	3a9d44730a9724e6e7a0ed17eff25c17
 URL:		https://linux.thai.net/projects/thaifonts-arundina
-BuildRequires:	fontforge >= 20080110
-BuildRequires:	xorg-app-mkfontscale
+BuildRequires:	fontforge >= 20170731
+BuildRequires:	python3 >= 1:3.7
+BuildRequires:	python3-fontforge >= 20170731
+BuildRequires:	rpmbuild(macros) >= 1.751
 BuildRequires:	tar >= 1:1.22
+BuildRequires:	xorg-app-mkfontscale
 BuildRequires:	xz
 %if %{with latex}
+# afm2tfm, vptovf, updmap-sys, mktexlsr
 BuildRequires:	texlive
 BuildRequires:	thailatex >= 0.4.6
 %endif
@@ -111,7 +115,7 @@ TLWG pod następującym kątem:
 Ten pakiet zawiera fonty LaTeXowe do używania z pakietem thailatex.
 
 %prep
-%setup -q -n fonts-sipa-arundina-%{version}
+%setup -q -n fonts-arundina-%{version}
 
 %build
 %configure \
@@ -148,18 +152,16 @@ fontpostinst Type1
 fontpostinst Type1
 
 %post	-n thailatex-fonts-arundina
-umask 022
-%{_bindir}/texhash
+%texhash
 
 %postun	-n thailatex-fonts-arundina
-umask 022
-%{_bindir}/texhash
+%texhash
 
 %files -n fonts-TTF-thai-arundina
 %defattr(644,root,root,755)
 %doc AUTHORS COPYING ChangeLog NEWS README
 %{_fontsdir}/TTF/Arundina*.ttf
-%{_datadir}/fontconfig/conf.avail/65-sipa-arundina.conf
+%{_datadir}/fontconfig/conf.avail/65-arundina.conf
 
 %files -n fonts-Type1-thai-arundina
 %defattr(644,root,root,755)
